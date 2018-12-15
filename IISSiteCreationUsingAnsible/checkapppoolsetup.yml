@@ -1,0 +1,14 @@
+---
+- hosts: hostservers-group
+  gather_facts: no
+  strategy: free
+  tasks:
+  - name : check_if_pool_exists_started
+    win_iis_webapppool:
+      name: '{{demo_pool_name}}'
+      state: started
+      attributes:
+          managedRuntimeVersion: 'No Managed Code'
+          processModel.identityType: SpecificUser
+          processModel.userName: '{{demo_pool_user}}'
+          processModel.password: '{{demo_pool_pwd}}'

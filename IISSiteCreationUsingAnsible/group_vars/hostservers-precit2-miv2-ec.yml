@@ -1,0 +1,13 @@
+ansible_user: <ansibleUser>
+ansible_password: <ansibleUserPassword>
+ansible_connection: winrm
+ansible_port: <PortForAnsibleConnection>
+ansible_winrm_transport: kerberos
+ansible_winrm_kerberos_delegation: true
+demo_pool_name: <AppPoolName>
+demo_pool_user: <UserIdentityForSite>
+demo_pool_pwd: <UserPasswordIdentityForSite>
+demo_site_port: <AppSitePort>
+demo_site_ip: <SiteIp>
+demo_site_path_physical: <PhysicalPathOnServer>
+demo_site_name: <SiteName>

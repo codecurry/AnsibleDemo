@@ -1,0 +1,9 @@
+---
+- hosts: hostservers-group
+  gather_facts: no
+  strategy: free
+  tasks:
+  - name : check if iis server present
+    win_iis_webapppool:
+      name: '{{demo_pool_name}}'
+      state: absent

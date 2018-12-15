@@ -1,0 +1,17 @@
+---
+- hosts: hostservers-group
+  gather_facts: no
+  strategy: free
+  tasks:
+  - name : check_if_physical_folder_present
+    win_file:
+      path: '{{demo_site_path_physical}}'
+      state: directory
+  - name : check_if_website_exists_started
+    win_iis_website:
+      name: '{{demo_pool_name}}'
+      state: started
+      port: '{{demo_site_port}}'
+      ip: '{{demo_site_ip}}'
+      application_pool: '{{demo_pool_name}}'
+      physical_path: '{{demo_site_path_physical}}'
